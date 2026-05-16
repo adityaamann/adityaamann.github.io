@@ -2,7 +2,7 @@
 
 A clean, minimal personal portfolio website built with HTML, CSS, and JavaScript. Deployed on GitHub Pages.
 
-🌐 **Live Site:** [adityaaman.github.io](https://adityaamann.github.io)
+🌐 **Live Site:** (https://adityaamann-github-io.vercel.app/)
 
 ---
 
