@@ -244,21 +244,26 @@
 
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      max-width: 1100px;
+      /* force 4 columns on wide screens to keep all 4 cards in one row */
+      grid-template-columns: repeat(4, minmax(200px, 1fr));
+      gap: 1.2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+      align-items: stretch;
+      grid-auto-rows: 1fr;
     }
 
     .project-card {
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 16px;
-      padding: 2rem;
+      padding: 1.25rem; /* smaller padding for medium sized cards */
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
       display: flex;
       flex-direction: column;
+      height: 100%; /* make card fill the grid cell height */
     }
 
     .project-card::before {
@@ -282,28 +287,28 @@
 
     .project-number {
       font-family: 'DM Serif Display', serif;
-      font-size: 3rem;
+      font-size: 2.2rem; /* reduced size to match medium card */
       color: var(--border);
       line-height: 1;
-      margin-bottom: 1rem;
-      letter-spacing: -2px;
+      margin-bottom: 0.75rem; /* match badge spacing */
+      letter-spacing: -1px;
     }
 
     .project-title {
       font-family: 'DM Serif Display', serif;
-      font-size: 1.4rem;
-      letter-spacing: -0.5px;
+      font-size: 1.15rem;
+      letter-spacing: -0.3px;
       color: var(--text);
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.6rem;
     }
 
     .project-desc {
       font-size: 0.88rem;
       color: #555;
       font-weight: 300;
-      line-height: 1.7;
-      margin-bottom: 1.2rem;
-      flex: 1;
+      line-height: 1.6;
+      margin-bottom: 0.8rem;
+      flex: initial; /* prevent description from stretching and pushing tags down */
     }
 
     .project-tags {
@@ -480,7 +485,7 @@
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
     @media (max-width: 900px) {
-      .projects-grid { grid-template-columns: 1fr 1fr; }
+      .projects-grid { grid-template-columns: repeat(2, minmax(200px, 1fr)); }
     }
 
     @media (max-width: 768px) {
@@ -563,7 +568,6 @@
         <div class="skills-list">
           <span class="skill-tag">Python</span>
           <span class="skill-tag">JavaScript</span>
-          <span class="skill-tag">TypeScript</span>
           <span class="skill-tag">Next.js</span>
           <span class="skill-tag">React</span>
           <span class="skill-tag">Node.js</span>
@@ -638,31 +642,10 @@
         </div>
       </div>
 
-      <div class="project-card reveal">
-        <div class="project-number">03</div>
-        <h3 class="project-title">Portfolio Website</h3>
-        <p class="project-desc">
-          A responsive personal portfolio website designed to showcase projects, skills, and certificates with a clean, minimal aesthetic and smooth user experience across all devices.
-        </p>
-        <div class="project-tags">
-          <span class="project-tag">HTML</span>
-          <span class="project-tag">CSS</span>
-          <span class="project-tag">JavaScript</span>
-        </div>
-        <ul class="project-highlights">
-          <li>Structured content sections with smooth scroll navigation</li>
-          <li>Scroll-based reveal animations throughout</li>
-          <li>Fully responsive with mobile-first design principles</li>
-          <li>Clean typography and consistent spacing across devices</li>
-        </ul>
-        <div style="display:flex; gap:1rem; margin-top:1.2rem; flex-wrap:wrap;">
-          <a href="https://adityaamann-github-io.vercel.app/" target="_blank" class="project-link">Live →</a>
-          <a href="https://github.com/adityaamann/adityaamann.github.io" target="_blank" class="project-link">GitHub →</a>
-        </div>
-      </div>
+      
 
       <div class="project-card reveal">
-        <div class="project-number">04</div>
+        <div class="project-number">03</div>
         <div class="hackathon-badge">AtomQuest Hackathon 1.0</div>
         <h3 class="project-title">Goal Setting & Tracking Portal</h3>
         <p class="project-desc">
@@ -686,6 +669,29 @@
         <div style="display:flex; gap:1rem; margin-top:1.2rem; flex-wrap:wrap;">
           <a href="https://goal-portal.vercel.app/" target="_blank" class="project-link">Live →</a>
           <a href="https://github.com/adityaamann/goal-portal" target="_blank" class="project-link">GitHub →</a>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-number">04</div>
+        <h3 class="project-title">Portfolio Website</h3>
+        <p class="project-desc">
+          A responsive personal portfolio website designed to showcase projects, skills, and certificates with a clean, minimal aesthetic and smooth user experience across all devices.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">HTML</span>
+          <span class="project-tag">CSS</span>
+          <span class="project-tag">JavaScript</span>
+        </div>
+        <ul class="project-highlights">
+          <li>Structured content sections with smooth scroll navigation</li>
+          <li>Scroll-based reveal animations throughout</li>
+          <li>Fully responsive with mobile-first design principles</li>
+          <li>Clean typography and consistent spacing across devices</li>
+        </ul>
+        <div style="display:flex; gap:1rem; margin-top:1.2rem; flex-wrap:wrap;">
+          <a href="https://adityaamann-github-io.vercel.app/" target="_blank" class="project-link">Live →</a>
+          <a href="https://github.com/adityaamann/adityaamann.github.io" target="_blank" class="project-link">GitHub →</a>
         </div>
       </div>
 
